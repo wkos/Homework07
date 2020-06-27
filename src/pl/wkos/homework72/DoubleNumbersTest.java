@@ -3,9 +3,9 @@ package pl.wkos.homework72;
 public class DoubleNumbersTest {
     public static void main(String[] args) {
         DoubleNumbers doubleNumbers = new DoubleNumbers();
-        doubleNumbers.readNumberOfNumbers();
+        doubleNumbers.readAmountOfNumbers();
         doubleNumbers.readNumbers();
-        int size = doubleNumbers.getNumberOfNumbers();
+        int size = doubleNumbers.getAmountOfNumbers();
         double number;
         for (int i = 0; i < size - 1; i++) {
             number = doubleNumbers.getNumber(i);

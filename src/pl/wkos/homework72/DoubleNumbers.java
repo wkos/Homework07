@@ -17,25 +17,29 @@ public class DoubleNumbers {
         return numbers[i];
     }
 
-    public int getNumberOfNumbers() {
+    public int getAmountOfNumbers() {
         return numbers.length;
     }
 
-    public void readNumberOfNumbers() {
+    public void readAmountOfNumbers() {
         System.out.print("Na ilu liczbach wykonywać operacje? - ");
         Scanner scanner = new Scanner(System.in);
         int size = scanner.nextInt();
         numbers = new double[size];
     }
 
+    public String getCorrectFormOfNounWithNumeral(int number, String word) {
+        if (number == 1)
+            return word + "ę";
+        else if (number % 10 == 2 || number % 10 == 3 || number % 10 == 4)
+            return word + "y";
+        else
+            return word;
+    }
+
     public void readNumbers() {
         int len = numbers.length;
-        if (len == 1)
-            System.out.println("Podaj " + len + " liczbę");
-        else if (len % 10 == 2 || len % 10 == 3 || len % 10 == 4)
-            System.out.println("Podaj " + len + " liczby");
-        else
-            System.out.println("Podaj " + len + " liczb");
+        System.out.print("Podaj " + len + " " + getCorrectFormOfNounWithNumeral(len, "liczb") + "\n");
         Scanner scanner = new Scanner(System.in);
         scanner.useLocale(Locale.US);
         for (int i = 0; i < numbers.length; i++) {
